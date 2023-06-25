@@ -52,6 +52,3 @@ Please note that the task management system currently does not persist tasks bey
 
 Contributions to the task management system are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use and modify the code according to your needs.
