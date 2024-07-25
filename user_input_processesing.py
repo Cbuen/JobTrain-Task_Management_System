@@ -48,3 +48,6 @@ def predict_category(tasks):
 
         for task, category in zip(tasks, predicted_categories):
             print(f'Task: {task}, Predicted Category: {category}')
+
+# Correct usage of the function
+predict_category(["Go for a run", "go to gym"])

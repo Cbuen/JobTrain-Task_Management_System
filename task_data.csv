@@ -29,7 +29,7 @@ therapy session,Health
 buy prescription medicine,Health
 health insurance renewal,Health
 get flu shot,Health
-team meeting at 2 PM,Work
+team meeting at 2 pm,Work
 submit project report,Work
 attend conference call,Work
 finish coding assignment,Work
@@ -99,7 +99,7 @@ shoe repair,Errands
 buy household supplies,Errands
 schedule appliance maintenance,Errands
 organize garage sale,Errands
-HIIT workout,Fitness
+hiit workout,Fitness
 stretching routine,Fitness
 rock climbing,Fitness
 dance class,Fitness
@@ -179,78 +179,79 @@ plan group museum visit,Social
 host themed costume party,Social
 attend community cleanup day,Social
 organize group hiking trip,Social
-Attend spin class,Fitness
-Participate in a marathon,Fitness
-Do a home workout,Fitness
-Try a new fitness app,Fitness
-Join a fitness boot camp,Fitness
-Pay car insurance,Bills
-Pay student loan,Bills
-Pay medical bill,Bills
-Pay property management fee,Bills
-Pay for magazine subscription,Bills
-Schedule therapy session,Health
-Attend physical therapy,Health
-Get a massage,Health
-Join a mental health support group,Health
-Attend a nutritionist appointment,Health
-Write a blog post for company website,Work
-Design marketing materials,Work
-Conduct user research,Work
-Develop a new product feature,Work
-Analyze sales data,Work
-Prepare financial report,Work
-Create a social media campaign,Work
-Attend a trade show,Work
-Interview a job candidate,Work
-Train new employees,Work
-Buy cleaning supplies,Errands
-Get a haircut,Errands
-Pick up kids from daycare,Errands
-Drop off donations,Errands
-Get passport photos,Errands
-Buy school supplies,Errands
-Pick up groceries curbside,Errands
-Return online purchase,Errands
-Buy stamps,Errands
-Get car inspected,Errands
-Study for certification exam,Work
-Attend a coding bootcamp,Work
-Write a short story,Work
-Take a photography class,Work
-Learn graphic design,Work
-Practice public speaking,Work
-Read a self-help book,Work
-Watch a TED talk,Work
-Join a mastermind group,Work
-Start a personal blog,Work
-Host a BBQ,Social
-Attend a family reunion,Social
-Plan a beach day with friends,Social
-Join a wine club,Social
-Organize a board game night,Social
-Attend a book signing event,Social
-Plan a road trip with friends,Social
-Host a potluck dinner,Social
-Attend a friend's housewarming party,Social
-Plan a surprise birthday party,Social
-Complete coding assignment,Work
-Debug software,Work
-Write unit tests,Work
-Review pull request,Work
-Attend code review meeting,Work
-Deploy application to production,Work
-Update project documentation,Work
-Conduct code refactoring,Work
-Implement new feature,Work
-Fix software bugs,Work
-Collaborate on coding project,Work
-Attend programming workshop,Work
-Participate in hackathon,Work
-Write technical blog post,Work
-Develop API,Work
-Optimize database queries,Work
-Perform code analysis,Work
-Conduct user testing,Work
-Prepare for technical interview,Work
-Research new programming languages,Work
+attend spin class,Fitness
+participate in a marathon,Fitness
+do a home workout,Fitness
+try a new fitness app,Fitness
+join a fitness boot camp,Fitness
+pay car insurance,Bills
+pay student loan,Bills
+pay medical bill,Bills
+pay property management fee,Bills
+pay for magazine subscription,Bills
+schedule therapy session,Health
+attend physical therapy,Health
+get a massage,Health
+join a mental health support group,Health
+attend a nutritionist appointment,Health
+write a blog post for company website,Work
+design marketing materials,Work
+conduct user research,Work
+develop a new product feature,Work
+analyze sales data,Work
+prepare financial report,Work
+create a social media campaign,Work
+attend a trade show,Work
+interview a job candidate,Work
+train new employees,Work
+buy cleaning supplies,Errands
+get a haircut,Errands
+pick up kids from daycare,Errands
+drop off donations,Errands
+get passport photos,Errands
+buy school supplies,Errands
+pick up groceries curbside,Errands
+return online purchase,Errands
+buy stamps,Errands
+get car inspected,Errands
+study for certification exam,Work
+attend a coding bootcamp,Work
+write a short story,Work
+take a photography class,Work
+learn graphic design,Work
+practice public speaking,Work
+read a self-help book,Work
+watch a ted talk,Work
+join a mastermind group,Work
+start a personal blog,Work
+host a bbq,Social
+attend a family reunion,Social
+plan a beach day with friends,Social
+join a wine club,Social
+organize a board game night,Social
+attend a book signing event,Social
+plan a road trip with friends,Social
+host a potluck dinner,Social
+attend a friend's housewarming party,Social
+plan a surprise birthday party,Social
+complete coding assignment,Work
+debug software,Work
+write unit tests,Work
+review pull request,Work
+attend code review meeting,Work
+deploy application to production,Work
+update project documentation,Work
+conduct code refactoring,Work
+implement new feature,Work
+fix software bugs,Work
+collaborate on coding project,Work
+attend programming workshop,Work
+participate in hackathon,Work
+write technical blog post,Work
+develop api,Work
+optimize database queries,Work
+perform code analysis,Work
+conduct user testing,Work
+prepare for technical interview,Work
+research new programming languages,Work
+go for a run,Fitness
