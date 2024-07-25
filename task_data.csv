@@ -1,0 +1,256 @@
+task,category
+go to gym,Fitness
+morning yoga session,Fitness
+evening run,Fitness
+walking the dog,Fitness
+attend fitness class,Fitness
+swimming session,Fitness
+cycling,Fitness
+hiking,Fitness
+weight lifting,Fitness
+aerobics class,Fitness
+pay electricity bill,Bills
+pay gym membership,Bills
+pay rent,Bills
+pay credit card bill,Bills
+pay water bill,Bills
+pay internet bill,Bills
+pay phone bill,Bills
+pay insurance premium,Bills
+pay mortgage,Bills
+pay loan installment,Bills
+annual health checkup,Health
+dentist appointment,Health
+doctor appointment,Health
+meditate for 20 minutes,Health
+buy vitamins,Health
+yoga session,Health
+therapy session,Health
+buy prescription medicine,Health
+health insurance renewal,Health
+get flu shot,Health
+team meeting at 2 PM,Work
+submit project report,Work
+attend conference call,Work
+finish coding assignment,Work
+weekly team sync,Work
+prepare presentation,Work
+client meeting,Work
+review team performance,Work
+update project plan,Work
+send weekly updates,Work
+buy groceries,Errands
+pick up dry cleaning,Errands
+post office visit,Errands
+car maintenance,Errands
+bank visit,Errands
+buy pet food,Errands
+drop off recycling,Errands
+pick up kids from school,Errands
+buy birthday gift,Errands
+return library books,Errands
+read a book,Personal Development
+take an online course,Personal Development
+practice a new language,Personal Development
+attend a workshop,Personal Development
+write in journal,Personal Development
+learn to play an instrument,Personal Development
+practice coding,Personal Development
+meditation session,Personal Development
+watch educational videos,Personal Development
+work on a hobby,Personal Development
+call a friend,Social
+attend a social event,Social
+go out for dinner,Social
+visit family,Social
+plan a party,Social
+join a club,Social
+volunteer at a local charity,Social
+attend a concert,Social
+go to a movie,Social
+host a game night,Social
+meal prep for the week,Health
+take multivitamins,Health
+schedule annual physical,Health
+blood pressure check,Health
+eye exam appointment,Health
+dental cleaning,Health
+get vaccinations updated,Health
+mental health day,Health
+try new healthy recipe,Health
+track water intake,Health
+update resume,Work
+organize work desk,Work
+networking event,Work
+professional development seminar,Work
+set quarterly goals,Work
+performance review,Work
+brainstorming session,Work
+research industry trends,Work
+create project timeline,Work
+mentor junior colleague,Work
+declutter closet,Errands
+get car washed,Errands
+renew driver's license,Errands
+schedule home repairs,Errands
+donate old clothes,Errands
+pick up prescriptions,Errands
+shoe repair,Errands
+buy household supplies,Errands
+schedule appliance maintenance,Errands
+organize garage sale,Errands
+HIIT workout,Fitness
+stretching routine,Fitness
+rock climbing,Fitness
+dance class,Fitness
+martial arts training,Fitness
+pilates session,Fitness
+crossfit workout,Fitness
+tennis match,Fitness
+group fitness challenge,Fitness
+try new gym equipment,Fitness
+pay property tax,Bills
+renew car registration,Bills
+pay streaming service subscription,Bills
+pay homeowners association fees,Bills
+pay annual membership dues,Bills
+pay parking ticket,Bills
+pay for online course,Bills
+pay for home security system,Bills
+pay for lawn care service,Bills
+pay for pest control service,Bills
+learn public speaking,Personal Development
+practice mindfulness,Personal Development
+attend personal growth seminar,Personal Development
+set personal goals,Personal Development
+learn time management skills,Personal Development
+start a side project,Personal Development
+improve financial literacy,Personal Development
+learn photography,Personal Development
+practice active listening,Personal Development
+learn about different cultures,Personal Development
+organize book club meeting,Social
+attend community event,Social
+plan group hiking trip,Social
+join sports league,Social
+organize potluck dinner,Social
+attend art gallery opening,Social
+participate in charity run,Social
+plan weekend getaway with friends,Social
+attend local festival,Social
+join community garden group,Social
+host birthday party,Social
+attend wedding,Social
+plan baby shower,Social
+organize reunion,Social
+join online social group,Social
+attend networking mixer,Social
+host dinner party,Social
+plan holiday gathering,Social
+attend sports viewing party,Social
+organize charity fundraiser,Social
+join book club,Social
+attend speed dating event,Social
+host game night,Social
+plan surprise party,Social
+attend cultural festival,Social
+join hobby meetup group,Social
+organize neighborhood block party,Social
+attend comedy show with friends,Social
+plan group vacation,Social
+host housewarming party,Social
+attend alumni gathering,Social
+organize team-building activity,Social
+join social dance class,Social
+attend art exhibition opening,Social
+plan group picnic,Social
+host movie marathon,Social
+attend trivia night at local pub,Social
+organize group volunteering event,Social
+join community theater group,Social
+attend local music gig,Social
+plan group cooking class,Social
+host karaoke night,Social
+attend wine tasting event,Social
+organize group fitness challenge,Social
+join local sports fan club,Social
+attend poetry reading,Social
+plan group museum visit,Social
+host themed costume party,Social
+attend community cleanup day,Social
+organize group hiking trip,Social
+Attend spin class,Fitness
+Participate in a marathon,Fitness
+Do a home workout,Fitness
+Try a new fitness app,Fitness
+Join a fitness boot camp,Fitness
+Pay car insurance,Bills
+Pay student loan,Bills
+Pay medical bill,Bills
+Pay property management fee,Bills
+Pay for magazine subscription,Bills
+Schedule therapy session,Health
+Attend physical therapy,Health
+Get a massage,Health
+Join a mental health support group,Health
+Attend a nutritionist appointment,Health
+Write a blog post for company website,Work
+Design marketing materials,Work
+Conduct user research,Work
+Develop a new product feature,Work
+Analyze sales data,Work
+Prepare financial report,Work
+Create a social media campaign,Work
+Attend a trade show,Work
+Interview a job candidate,Work
+Train new employees,Work
+Buy cleaning supplies,Errands
+Get a haircut,Errands
+Pick up kids from daycare,Errands
+Drop off donations,Errands
+Get passport photos,Errands
+Buy school supplies,Errands
+Pick up groceries curbside,Errands
+Return online purchase,Errands
+Buy stamps,Errands
+Get car inspected,Errands
+Study for certification exam,Work
+Attend a coding bootcamp,Work
+Write a short story,Work
+Take a photography class,Work
+Learn graphic design,Work
+Practice public speaking,Work
+Read a self-help book,Work
+Watch a TED talk,Work
+Join a mastermind group,Work
+Start a personal blog,Work
+Host a BBQ,Social
+Attend a family reunion,Social
+Plan a beach day with friends,Social
+Join a wine club,Social
+Organize a board game night,Social
+Attend a book signing event,Social
+Plan a road trip with friends,Social
+Host a potluck dinner,Social
+Attend a friend's housewarming party,Social
+Plan a surprise birthday party,Social
+Complete coding assignment,Work
+Debug software,Work
+Write unit tests,Work
+Review pull request,Work
+Attend code review meeting,Work
+Deploy application to production,Work
+Update project documentation,Work
+Conduct code refactoring,Work
+Implement new feature,Work
+Fix software bugs,Work
+Collaborate on coding project,Work
+Attend programming workshop,Work
+Participate in hackathon,Work
+Write technical blog post,Work
+Develop API,Work
+Optimize database queries,Work
+Perform code analysis,Work
+Conduct user testing,Work
+Prepare for technical interview,Work
+Research new programming languages,Work
