@@ -1,6 +1,9 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTextEdit, QListWidget
+import requests
+from datetime import datetime
 
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTextEdit, QListWidget
+from PyQt5.QtCore import QTimer
 
 class TaskManagerWindow(QMainWindow):
     def __init__(self):
@@ -10,13 +13,26 @@ class TaskManagerWindow(QMainWindow):
 
         self.task_list = []
 
+        self.DEFAULT_TIMEZONE = "zone?timeZone=America/Los_Angeles"
+        self.api_url = "https://timeapi.io/api/Time/current/{}".format(self.DEFAULT_TIMEZONE)
+
+        # call to the time api before setup UI is created
+        self.fetch_time()
+
         self.setup_ui()
+        self.start_clock()
 
     def setup_ui(self):
         main_widget = QWidget()
         main_layout = QVBoxLayout()
 
         label = QLabel("Welcome to the task management system")
+
+        self.date_label = QLabel(self.current_date)
+        main_layout.addWidget(self.date_label)
+
+        self.time_label = QLabel(self.current_time)
+        main_layout.addWidget(self.time_label)
 
         add_button = QPushButton("Add New Task")
         add_button.clicked.connect(self.add_task)
@@ -31,7 +47,7 @@ class TaskManagerWindow(QMainWindow):
         exit_button.clicked.connect(self.close)
 
         main_layout.addWidget(label)
-        main_layout.addWidget(add_button)
+        main_layout.addWidget(add_button)   
         main_layout.addWidget(view_button)
         main_layout.addWidget(complete_button)
         main_layout.addWidget(exit_button)
@@ -61,6 +77,36 @@ class TaskManagerWindow(QMainWindow):
             event.accept()
         else:
             event.ignore()
+
+    def convert_to_regular_time(self, time_string):
+        time_obj = datetime.strptime(time_string, "%H:%M")
+
+        return time_obj.strftime("%I:%M %p")
+    
+    def fetch_time(self):
+        try:
+            response = requests.get(self.api_url)
+            if response.status_code == 200:
+                data = response.json()
+                
+                self.current_date = data.get("date")
+                self.current_time = data.get('time')
+                self.current_time = self.convert_to_regular_time(self.current_time)
+                return self.current_time
+
+        except Exception as e:
+            print(e)
+
+    def update_time(self):
+        current_time = self.fetch_time()
+        self.time_label.setText(current_time)
+
+    def start_clock(self):
+        self.update_time()
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.update_time)
+        self.timer.start(60000)
+
 
 
 class AddTaskDialog(QDialog):
