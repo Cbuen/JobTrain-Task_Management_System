@@ -1,53 +1,59 @@
 import pandas as pd
+import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.model_selection import train_test_split
-from sklearn.naive_bayes import MultinomialNB
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score, classification_report
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import LabelEncoder
 
-
-
+# Load and preprocess the data
 df = pd.read_csv('task_data.csv')
+df['task'] = df['task'].str.lower()  # Convert all tasks to lowercase
 
-# Preprocess the data
-vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(df['task'])
-y = df['category']
+# Encode categories
+le = LabelEncoder()
+df['category'] = le.fit_transform(df['category'])
+
+# Balance the dataset
+min_samples = df['category'].value_counts().min()
+df_balanced = df.groupby('category').apply(lambda x: x.sample(min_samples)).reset_index(drop=True)
 
 # Split the data
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(df_balanced['task'], df_balanced['category'], test_size=0.2, random_state=42)
 
-# Train the model
-model = MultinomialNB()
-model.fit(X_train, y_train)
+# Create a pipeline
+pipeline = Pipeline([
+    ('tfidf', TfidfVectorizer(stop_words='english')),
+    ('clf', SVC(probability=True)),
+])
 
+# Define parameters for GridSearchCV
+parameters = {
+    'tfidf__max_df': (0.5, 0.75, 1.0),
+    'tfidf__ngram_range': ((1, 1), (1, 2)),  # unigrams or bigrams
+    'clf__C': (0.1, 1, 10),
+    'clf__kernel': ('linear', 'rbf'),
+}
 
-"""
-Used for testing purposes in evaluating the models data-set
-"""
+# Perform GridSearchCV
+grid_search = GridSearchCV(pipeline, parameters, cv=5, n_jobs=-1, verbose=1)
+grid_search.fit(X_train, y_train)
 
-# Predict and evaluate
-y_pred = model.predict(X_test)
-accuracy = accuracy_score(y_test, y_pred)
-# print(f'Accuracy: {accuracy}')
+# Print the best parameters
+print("Best parameters:", grid_search.best_params_)
 
-# # Print detailed classification report
-# print("\nClassification Report:")
-# print(classification_report(y_test, y_pred))
+# Evaluate the model
+y_pred = grid_search.predict(X_test)
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("\nClassification Report:")
+print(classification_report(y_test, y_pred, target_names=le.classes_))
 
-
-
-# Example prediction for multiple tasks
-new_tasks = ["final project school"]
-
-# creatred the model now need to take the model and integrate with my gui 
-
+# Function to predict categories
 def predict_category(tasks):
-    if tasks:
-        new_tasks_transformed = vectorizer.transform(tasks)
-        predicted_categories = model.predict(new_tasks_transformed)
+    tasks = [task.lower() for task in tasks]  # Convert to lowercase
+    predicted_categories = grid_search.predict(tasks)
+    return [le.inverse_transform([cat])[0] for cat in predicted_categories]
 
-        for task, category in zip(tasks, predicted_categories):
-            print(f'Task: {task}, Predicted Category: {category}')
-
-# Correct usage of the function
-predict_category(["Go for a run", "go to gym"])
+# Example usage
+print(predict_category(["go shopping at mall"]))
