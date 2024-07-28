@@ -1,282 +1,50 @@
-task,category
-go to gym,Fitness
-morning yoga session,Fitness
-evening run,Fitness
-walking the dog,Fitness
-attend fitness class,Fitness
-swimming session,Fitness
-cycling,Fitness
-hiking,Fitness
-weight lifting,Fitness
-aerobics class,Fitness
-pay electricity bill,Bills
-pay gym membership,Bills
-pay rent,Bills
-pay credit card bill,Bills
-pay water bill,Bills
-pay internet bill,Bills
-pay phone bill,Bills
-pay insurance premium,Bills
-pay mortgage,Bills
-pay loan installment,Bills
-annual health checkup,Health
-dentist appointment,Health
-doctor appointment,Health
-meditate for 20 minutes,Health
-buy vitamins,Health
-yoga session,Health
-therapy session,Health
-buy prescription medicine,Health
-health insurance renewal,Health
-get flu shot,Health
-team meeting at 2 pm,Work
-submit project report,Work
-attend conference call,Work
-finish coding assignment,Work
-weekly team sync,Work
-prepare presentation,Work
-client meeting,Work
-review team performance,Work
-update project plan,Work
-send weekly updates,Work
-buy groceries,Errands
-pick up dry cleaning,Errands
-post office visit,Errands
-car maintenance,Errands
-bank visit,Errands
-buy pet food,Errands
-drop off recycling,Errands
-pick up kids from school,Errands
-buy birthday gift,Errands
-return library books,Errands
-read a book,Personal Development
-take an online course,Personal Development
-practice a new language,Personal Development
-attend a workshop,Personal Development
-write in journal,Personal Development
-learn to play an instrument,Personal Development
-practice coding,Personal Development
-meditation session,Personal Development
-watch educational videos,Personal Development
-work on a hobby,Personal Development
-call a friend,Social
-attend a social event,Social
-go out for dinner,Social
-visit family,Social
-plan a party,Social
-join a club,Social
-volunteer at a local charity,Social
-attend a concert,Social
-go to a movie,Social
-host a game night,Social
-meal prep for the week,Health
-take multivitamins,Health
-schedule annual physical,Health
-blood pressure check,Health
-eye exam appointment,Health
-dental cleaning,Health
-get vaccinations updated,Health
-mental health day,Health
-try new healthy recipe,Health
-track water intake,Health
-update resume,Work
-organize work desk,Work
-networking event,Work
-professional development seminar,Work
-set quarterly goals,Work
-performance review,Work
-brainstorming session,Work
-research industry trends,Work
-create project timeline,Work
-mentor junior colleague,Work
-declutter closet,Errands
-get car washed,Errands
-renew driver's license,Errands
-schedule home repairs,Errands
-donate old clothes,Errands
-pick up prescriptions,Errands
-shoe repair,Errands
-buy household supplies,Errands
-schedule appliance maintenance,Errands
-organize garage sale,Errands
-hiit workout,Fitness
-stretching routine,Fitness
-rock climbing,Fitness
-dance class,Fitness
-martial arts training,Fitness
-pilates session,Fitness
-crossfit workout,Fitness
-tennis match,Fitness
-group fitness challenge,Fitness
-try new gym equipment,Fitness
-pay property tax,Bills
-renew car registration,Bills
-pay streaming service subscription,Bills
-pay homeowners association fees,Bills
-pay annual membership dues,Bills
-pay parking ticket,Bills
-pay for online course,Bills
-pay for home security system,Bills
-pay for lawn care service,Bills
-pay for pest control service,Bills
-learn public speaking,Personal Development
-practice mindfulness,Personal Development
-attend personal growth seminar,Personal Development
-set personal goals,Personal Development
-learn time management skills,Personal Development
-start a side project,Personal Development
-improve financial literacy,Personal Development
-learn photography,Personal Development
-practice active listening,Personal Development
-learn about different cultures,Personal Development
-organize book club meeting,Social
-attend community event,Social
-plan group hiking trip,Social
-join sports league,Social
-organize potluck dinner,Social
-attend art gallery opening,Social
-participate in charity run,Social
-plan weekend getaway with friends,Social
-attend local festival,Social
-join community garden group,Social
-host birthday party,Social
-attend wedding,Social
-plan baby shower,Social
-organize reunion,Social
-join online social group,Social
-attend networking mixer,Social
-host dinner party,Social
-plan holiday gathering,Social
-attend sports viewing party,Social
-organize charity fundraiser,Social
-join book club,Social
-attend speed dating event,Social
-host game night,Social
-plan surprise party,Social
-attend cultural festival,Social
-join hobby meetup group,Social
-organize neighborhood block party,Social
-attend comedy show with friends,Social
-plan group vacation,Social
-host housewarming party,Social
-attend alumni gathering,Social
-organize team-building activity,Social
-join social dance class,Social
-attend art exhibition opening,Social
-plan group picnic,Social
-host movie marathon,Social
-attend trivia night at local pub,Social
-organize group volunteering event,Social
-join community theater group,Social
-attend local music gig,Social
-plan group cooking class,Social
-host karaoke night,Social
-attend wine tasting event,Social
-organize group fitness challenge,Social
-join local sports fan club,Social
-attend poetry reading,Social
-plan group museum visit,Social
-host themed costume party,Social
-attend community cleanup day,Social
-organize group hiking trip,Social
-attend spin class,Fitness
-participate in a marathon,Fitness
-do a home workout,Fitness
-try a new fitness app,Fitness
-join a fitness boot camp,Fitness
-pay car insurance,Bills
-pay student loan,Bills
-pay medical bill,Bills
-pay property management fee,Bills
-pay for magazine subscription,Bills
-schedule therapy session,Health
-attend physical therapy,Health
-get a massage,Health
-join a mental health support group,Health
-attend a nutritionist appointment,Health
-write a blog post for company website,Work
-design marketing materials,Work
-conduct user research,Work
-develop a new product feature,Work
-analyze sales data,Work
-prepare financial report,Work
-create a social media campaign,Work
-attend a trade show,Work
-interview a job candidate,Work
-train new employees,Work
-buy cleaning supplies,Errands
-get a haircut,Errands
-pick up kids from daycare,Errands
-drop off donations,Errands
-get passport photos,Errands
-buy school supplies,Errands
-pick up groceries curbside,Errands
-return online purchase,Errands
-buy stamps,Errands
-get car inspected,Errands
-study for certification exam,Work
-attend a coding bootcamp,Work
-write a short story,Work
-take a photography class,Work
-learn graphic design,Work
-practice public speaking,Work
-read a self-help book,Work
-watch a ted talk,Work
-join a mastermind group,Work
-start a personal blog,Work
-host a bbq,Social
-attend a family reunion,Social
-plan a beach day with friends,Social
-join a wine club,Social
-organize a board game night,Social
-attend a book signing event,Social
-plan a road trip with friends,Social
-host a potluck dinner,Social
-attend a friend's housewarming party,Social
-plan a surprise birthday party,Social
-complete coding assignment,Work
-debug software,Work
-write unit tests,Work
-review pull request,Work
-attend code review meeting,Work
-deploy application to production,Work
-update project documentation,Work
-conduct code refactoring,Work
-implement new feature,Work
-fix software bugs,Work
-collaborate on coding project,Work
-attend programming workshop,Work
-participate in hackathon,Work
-write technical blog post,Work
-develop api,Work
-optimize database queries,Work
-perform code analysis,Work
-conduct user testing,Work
-prepare for technical interview,Work
-research new programming languages,Work
-go for a run,Fitness
-cancel gym membership,Bills
-cancel Netflix subscription,Bills
-cancel magazine subscription,Bills
-cancel streaming service subscription,Bills
-cancel insurance policy,Bills
-cancel phone service,Bills
-cancel internet service,Bills
-cancel cable service,Bills
-cancel utility service,Bills
-cancel online course subscription,Bills
-cancel fitness class subscription,Bills
-cancel home security service,Bills
-cancel lawn care service,Bills
-cancel pest control service,Bills
-cancel property management service,Bills
-cancel car insurance,Bills
-cancel student loan,Bills
-cancel medical bill,Bills
-cancel property tax,Bills
-cancel homeowners association fees,Bills
-cancel parking ticket,Bills
-cancel annual membership dues,Bills
-cancel loan installment,Bills
-cancel mortgage,Bills
-cancel credit card bill,Bills
+Category,Task
+Social,Host a BBQ
+Social,Attend a family reunion
+Social,Plan a beach day with friends
+Social,Join a wine club
+Social,Organize a board game night
+Social,Attend a book signing event
+Social,Plan a road trip with friends
+Social,Host a potluck dinner
+Personal Development,Write a blog post for company website
+Personal Development,Take a photography class
+Personal Development,Learn graphic design
+Personal Development,Practice public speaking
+Personal Development,Read a self-help book
+Personal Development,Watch a TED Talk
+Personal Development,Join a mastermind group
+Personal Development,Start a personal blog
+Personal Development, Go to work
+Health,Join a mental health support group
+Health,Attend a nutritionist appointment
+Health,Schedule a dental check-up
+Health,Attend a yoga class
+Health,Get a flu shot
+Health,Visit a chiropractor
+Health,Attend a therapy session
+Health,Get a health screening
+Fitness,Go for a run
+Fitness,Attend a spin class
+Fitness,Do a home workout
+Fitness,Go swimming
+Fitness,Take a dance class
+Fitness,Join a martial arts class
+Fitness,Go hiking
+Fitness,Do a yoga session
+Errands,Buy cleaning supplies
+Errands,Get a haircut
+Errands,Pick up kids from daycare
+Errands,Drop off donations
+Errands,Get passport photos
+Errands,Buy school supplies
+Errands,Pick up groceries curbside
+Errands,Return online purchase
+Bills,Cancel gym membership
+Bills,Cancel Netflix subscription
+Bills,Cancel magazine subscription
+Bills,Cancel streaming service subscription
+Bills,Cancel insurance policy
+Bills,Cancel phone service
+Bills,Cancel internet service
+Bills,Pay credit card bill

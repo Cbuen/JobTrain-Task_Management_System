@@ -9,18 +9,18 @@ from sklearn.preprocessing import LabelEncoder
 
 # Load and preprocess the data
 df = pd.read_csv('task_data.csv')
-df['task'] = df['task'].str.lower()  # Convert all tasks to lowercase
+df['Task'] = df['Task'].str.lower()  # Convert all tasks to lowercase
 
 # Encode categories
 le = LabelEncoder()
-df['category'] = le.fit_transform(df['category'])
+df['Category'] = le.fit_transform(df['Category'])
 
 # Balance the dataset
-min_samples = df['category'].value_counts().min()
-df_balanced = df.groupby('category').apply(lambda x: x.sample(min_samples)).reset_index(drop=True)
+min_samples = df['Category'].value_counts().min()
+df_balanced = df.groupby('Category').apply(lambda x: x.sample(min_samples)).reset_index(drop=True)
 
 # Split the data
-X_train, X_test, y_train, y_test = train_test_split(df_balanced['task'], df_balanced['category'], test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(df_balanced['Task'], df_balanced['Category'], test_size=0.2, random_state=42)
 
 # Create a pipeline
 pipeline = Pipeline([
@@ -41,13 +41,13 @@ grid_search = GridSearchCV(pipeline, parameters, cv=5, n_jobs=-1, verbose=1)
 grid_search.fit(X_train, y_train)
 
 # Print the best parameters
-print("Best parameters:", grid_search.best_params_)
+# print("Best parameters:", grid_search.best_params_)
 
 # Evaluate the model
-y_pred = grid_search.predict(X_test)
-print("Accuracy:", accuracy_score(y_test, y_pred))
-print("\nClassification Report:")
-print(classification_report(y_test, y_pred, target_names=le.classes_))
+# y_pred = grid_search.predict(X_test)
+# print("Accuracy:", accuracy_score(y_test, y_pred))
+# print("\nClassification Report:")
+# print(classification_report(y_test, y_pred, target_names=le.classes_))
 
 # Function to predict categories
 def predict_category(tasks):
@@ -56,4 +56,4 @@ def predict_category(tasks):
     return [le.inverse_transform([cat])[0] for cat in predicted_categories]
 
 # Example usage
-print(predict_category(["go shopping at mall"]))
+print(predict_category(["work shift at noon"]))
