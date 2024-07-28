@@ -41,7 +41,7 @@ grid_search = GridSearchCV(pipeline, parameters, cv=5, n_jobs=-1, verbose=1)
 grid_search.fit(X_train, y_train)
 
 # Print the best parameters
-# print("Best parameters:", grid_search.best_params_)
+# print("Best parameters:", grid_search.best_params_)   
 
 # Evaluate the model
 # y_pred = grid_search.predict(X_test)
@@ -54,6 +54,3 @@ def predict_category(tasks):
     tasks = [task.lower() for task in tasks]  # Convert to lowercase
     predicted_categories = grid_search.predict(tasks)
     return [le.inverse_transform([cat])[0] for cat in predicted_categories]
-
-# Example usage
-print(predict_category(["work shift at noon"]))

@@ -3,7 +3,12 @@ import requests
 from datetime import datetime
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTextEdit, QListWidget
-from PyQt5.QtCore import QTimer
+from PyQt5.QtCore import QTimer, Qt
+
+from user_input_processesing import predict_category
+
+# STYLING ADDTIONS NEED TO ME DONE
+# NEED TO FIX EXIT BUTTON FUNCTIONAILTY, ERROR SAYING NOO ACCEPT ATTRIBUTER FOR BOOL (EVENT) TYPE
 
 class TaskManagerWindow(QMainWindow):
     def __init__(self):
@@ -13,14 +18,34 @@ class TaskManagerWindow(QMainWindow):
 
         self.task_list = []
 
+        self.organized_tasks = dict()
+
         self.DEFAULT_TIMEZONE = "zone?timeZone=America/Los_Angeles"
         self.api_url = "https://timeapi.io/api/Time/current/{}".format(self.DEFAULT_TIMEZONE)
+
+        # Initialize current_date and current_time
+        self.current_date = ""
+        self.current_time = ""
 
         # call to the time api before setup UI is created
         self.fetch_time()
 
         self.setup_ui()
         self.start_clock()
+
+    def fetch_time(self):
+        try:
+            response = requests.get(self.api_url)
+            if response.status_code == 200:
+                data = response.json()
+                
+                self.current_date = data.get("date")
+                self.current_time = data.get('time')
+                self.current_time = self.convert_to_regular_time(self.current_time)
+                return self.current_time
+
+        except Exception as e:
+            print(e)
 
     def setup_ui(self):
         main_widget = QWidget()
@@ -40,15 +65,23 @@ class TaskManagerWindow(QMainWindow):
         view_button = QPushButton("View Tasks")
         view_button.clicked.connect(self.view_tasks)
 
+        organized_task_buttton = QPushButton("Organized Task View")
+        organized_task_buttton.clicked.connect(self.view_task_categories)
+
+        generate_task_categories_button = QPushButton("Generate your task categories")
+        generate_task_categories_button.clicked.connect(self.generate_categories)
+
         complete_button = QPushButton("Complete Task")
         complete_button.clicked.connect(self.complete_task)
 
         exit_button = QPushButton("Exit")
-        exit_button.clicked.connect(self.close)
+        exit_button.clicked.connect(self.closeEvent)
 
         main_layout.addWidget(label)
         main_layout.addWidget(add_button)   
         main_layout.addWidget(view_button)
+        main_layout.addWidget(organized_task_buttton)
+        main_layout.addWidget(generate_task_categories_button)
         main_layout.addWidget(complete_button)
         main_layout.addWidget(exit_button)
 
@@ -65,11 +98,36 @@ class TaskManagerWindow(QMainWindow):
         view_dialog = ViewTasksDialog(self, self.task_list)
         view_dialog.exec_()
 
+    def view_task_categories(self):
+        view_categories = ViewOrganizedTasks(self, self.organized_tasks)
+        view_categories.exec_()
+
+
+    def generate_categories(self):
+        if self.task_list:
+            temp_list = predict_category(self.task_list)
+
+            for i in range(len(temp_list)):
+                category = str(temp_list[i])
+                task = self.task_list[i]
+
+                if category not in self.organized_tasks:
+                    self.organized_tasks[category] = []
+
+                if task not in self.organized_tasks[category]:
+                    self.organized_tasks[category].append(task)
+        else:
+            self.task_list.clear()
+
+
+
     def complete_task(self):
         complete_dialog = CompleteTaskDialog(self, self.task_list)
         if complete_dialog.exec_() == QDialog.Accepted:
             completed_task = complete_dialog.task_list.currentRow()
-            self.task_list.pop(completed_task)
+
+            self.remove_from_ogranized_task(completed_task)
+            # self.task_list.pop(completed_task)
 
     def closeEvent(self, event):
         reply = ConfirmDialog.confirm_exit(self)
@@ -82,20 +140,7 @@ class TaskManagerWindow(QMainWindow):
         time_obj = datetime.strptime(time_string, "%H:%M")
 
         return time_obj.strftime("%I:%M %p")
-    
-    def fetch_time(self):
-        try:
-            response = requests.get(self.api_url)
-            if response.status_code == 200:
-                data = response.json()
-                
-                self.current_date = data.get("date")
-                self.current_time = data.get('time')
-                self.current_time = self.convert_to_regular_time(self.current_time)
-                return self.current_time
 
-        except Exception as e:
-            print(e)
 
     def update_time(self):
         current_time = self.fetch_time()
@@ -106,6 +151,18 @@ class TaskManagerWindow(QMainWindow):
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_time)
         self.timer.start(60000)
+
+    def remove_from_ogranized_task(self, task_to_remove):
+        target_task = self.task_list[task_to_remove]
+
+        for key in list(self.organized_tasks.keys()):
+            if target_task in self.organized_tasks[key]:
+                if len(self.organized_tasks[key]) == 1:
+                    del self.organized_tasks[key]
+                else:
+                    self.organized_tasks[key].remove(target_task)
+        self.task_list.pop(task_to_remove)
+
 
 
 
@@ -142,6 +199,31 @@ class ViewTasksDialog(QDialog):
 
         self.setLayout(layout)
 
+class ViewOrganizedTasks(QDialog):
+    def __init__(self, parent=None, organized_tasks={}):
+        super().__init__(parent)
+        self.setWindowTitle("Grouped Tasks")
+        self.organized_tasks = organized_tasks
+
+        layout = QHBoxLayout()
+
+        # Category list
+        self.category_list = QListWidget()
+        self.category_list.addItems(self.organized_tasks.keys())
+        self.category_list.itemClicked.connect(self.show_category_tasks)
+        layout.addWidget(self.category_list)
+
+        # Tasks for selected category
+        self.category_tasks = QListWidget()
+        layout.addWidget(self.category_tasks)
+
+        self.setLayout(layout)
+
+    def show_category_tasks(self, item):
+        category = item.text()
+        tasks = self.organized_tasks.get(category, [])
+        self.category_tasks.clear()
+        self.category_tasks.addItems(tasks)
 
 class CompleteTaskDialog(QDialog):
     def __init__(self, parent=None, tasks=[]):
@@ -199,6 +281,29 @@ class ConfirmDialog(QDialog):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    
+    # setting a global style sheet
+    app.setStyleSheet("""
+        * {
+            font-family: "Arial";
+            font-size: 14px;
+        }              
+        QPushButton {
+            background-color: #007ACC;
+            color: white;
+            font-size: 14px;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        QPushButton:hover {
+            background-color: #005A9E;
+        }
+        QPushButton:pressed {
+            background-color: #004275;
+        }
+    """)
+
+
     window = TaskManagerWindow()
     window.show()
     sys.exit(app.exec_())
