@@ -1,16 +1,18 @@
 import sys
+import json
+import os
 import requests
 from datetime import datetime
 
+# Importing PyQt5 modules for GUI components
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTextEdit, QListWidget
 from PyQt5.QtCore import QTimer, Qt
-
 
 # links this file to my language processing model
 from user_input_processesing import predict_category
 
 
-# Library uses classes to define windows
+# Main window class for the Task Management System
 class TaskManagerWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -35,6 +37,7 @@ class TaskManagerWindow(QMainWindow):
         self.setup_ui()
         self.start_clock()
 
+    # Fetch the current time before setting up the UI
     def fetch_time(self):
         try:
             response = requests.get(self.api_url)
@@ -49,18 +52,24 @@ class TaskManagerWindow(QMainWindow):
         except Exception as e:
             print(e)
 
+    # Function to set up the user interface
+
     def setup_ui(self):
         main_widget = QWidget()
         main_layout = QVBoxLayout()
 
+        # Add a welcome lABEL
         label = QLabel("Welcome to the task management system")
 
+        # Add labels to show the current date and time
         self.date_label = QLabel(self.current_date)
         main_layout.addWidget(self.date_label)
 
         self.time_label = QLabel(self.current_time)
         main_layout.addWidget(self.time_label)
 
+
+          # Add buttons for various actions
         add_button = QPushButton("Add New Task")
         add_button.clicked.connect(self.add_task)
 
@@ -87,8 +96,12 @@ class TaskManagerWindow(QMainWindow):
         save_button.clicked.connect(self.save)
         save_button.setGeometry(100, 100, 50, 40)
 
+        clean_save_button = QPushButton("Clean Save")
+        clean_save_button.clicked.connect(self.clean_save)
+
         main_layout.addWidget(label)
         main_layout.addWidget(save_button)
+        main_layout.addWidget(clean_save_button)
         main_layout.addWidget(add_button)   
         main_layout.addWidget(view_button)
         main_layout.addWidget(organized_task_buttton)
@@ -175,7 +188,36 @@ class TaskManagerWindow(QMainWindow):
         self.task_list.pop(task_to_remove)
 
     def save(self):
-        pass
+        filename = 'current_tasks.json'
+        existing_tasks = {}
+        
+        # Check if the file exists and read existing tasks
+        if os.path.exists(filename):
+            with open(filename, 'r') as file:
+                try:
+                    existing_tasks = json.load(file)
+                except json.JSONDecodeError:
+                    # If the file is empty or invalid JSON, we'll start with an empty dict
+                    pass
+        
+        # Merge existing tasks with current tasks
+        for category, tasks in self.organized_tasks.items():
+            if category in existing_tasks:
+                existing_tasks[category].extend(task for task in tasks if task not in existing_tasks[category])
+            else:
+                existing_tasks[category] = tasks
+        
+        # Save the merged tasks
+        with open(filename, 'w') as file:
+            json.dump(existing_tasks, file, indent=4)
+    
+    def clean_save(self):
+        filename = 'current_tasks.json'
+        
+        # Save only the current tasks, overwriting any existing data
+        with open(filename, 'w') as file:
+            json.dump(self.organized_tasks, file, indent=4)
+    
 
 
 
