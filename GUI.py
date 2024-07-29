@@ -53,7 +53,6 @@ class TaskManagerWindow(QMainWindow):
             print(e)
 
     # Function to set up the user interface
-
     def setup_ui(self):
         main_widget = QWidget()
         main_layout = QVBoxLayout()
