@@ -5,21 +5,23 @@ from datetime import datetime
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QTextEdit, QListWidget
 from PyQt5.QtCore import QTimer, Qt
 
+
+# links this file to my language processing model
 from user_input_processesing import predict_category
 
-# STYLING ADDTIONS NEED TO ME DONE
-# NEED TO FIX EXIT BUTTON FUNCTIONAILTY, ERROR SAYING NOO ACCEPT ATTRIBUTER FOR BOOL (EVENT) TYPE
 
+# Library uses classes to define windows
 class TaskManagerWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Task Management System")
-        self.setGeometry(100, 100, 400, 300)
+        self.setGeometry(100, 100, 800, 600)
 
         self.task_list = []
 
         self.organized_tasks = dict()
-
+        
+        # Timeapi to have a live clock
         self.DEFAULT_TIMEZONE = "zone?timeZone=America/Los_Angeles"
         self.api_url = "https://timeapi.io/api/Time/current/{}".format(self.DEFAULT_TIMEZONE)
 
@@ -68,16 +70,25 @@ class TaskManagerWindow(QMainWindow):
         organized_task_buttton = QPushButton("Organized Task View")
         organized_task_buttton.clicked.connect(self.view_task_categories)
 
+        # Added button to generate users task categories
         generate_task_categories_button = QPushButton("Generate your task categories")
+
+        # Connects button to the self.generate_categories merthod
         generate_task_categories_button.clicked.connect(self.generate_categories)
 
         complete_button = QPushButton("Complete Task")
         complete_button.clicked.connect(self.complete_task)
 
         exit_button = QPushButton("Exit")
-        exit_button.clicked.connect(self.closeEvent)
+        exit_button.clicked.connect(self.close)
+
+    
+        save_button = QPushButton("Save")
+        save_button.clicked.connect(self.save)
+        save_button.setGeometry(100, 100, 50, 40)
 
         main_layout.addWidget(label)
+        main_layout.addWidget(save_button)
         main_layout.addWidget(add_button)   
         main_layout.addWidget(view_button)
         main_layout.addWidget(organized_task_buttton)
@@ -162,6 +173,9 @@ class TaskManagerWindow(QMainWindow):
                 else:
                     self.organized_tasks[key].remove(target_task)
         self.task_list.pop(task_to_remove)
+
+    def save(self):
+        pass
 
 
 
@@ -283,10 +297,11 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     
     # setting a global style sheet
-    app.setStyleSheet("""
+    app.setStyleSheet("""                      
         * {
             font-family: "Arial";
             font-size: 14px;
+            border-radius: 8px;
         }              
         QPushButton {
             background-color: #007ACC;
