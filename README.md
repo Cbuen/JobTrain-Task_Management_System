@@ -1,4 +1,5 @@
 # Task Management System with NLP-based Task Categorization
+**Final Project for Google IT Automation Class via Job Train**
 
 This repository contains a task management system implemented using Python and PyQt5. The system provides a user-friendly graphical user interface (GUI) for managing tasks, including adding new tasks, viewing existing tasks, and marking tasks as completed. It also includes a Natural Language Processing (NLP) model to categorize tasks automatically.
 
