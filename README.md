@@ -74,5 +74,11 @@ python build_csv.py
 
 ## Images
 
-![Task-manager-1](https://github.com/user-attachments/assets/52287520-372d-4262-80a9-ddd27c89a7ba)
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;">
+  <img width="48%" alt="Task-manager-1" src="https://github.com/user-attachments/assets/52287520-372d-4262-80a9-ddd27c89a7ba">
+  <img width="48%" alt="Task-manager-2" src="https://github.com/user-attachments/assets/e472d53d-2732-4b91-a937-28feeaf12997">
+  <img width="48%" alt="Task-manager-3" src="https://github.com/user-attachments/assets/90fbb579-faeb-473a-bcb6-77d8ba838867">
+  <img width="48%" alt="Task-manager-4" src="https://github.com/user-attachments/assets/03f48142-95d7-4d3b-b0df-c138b3a920c4">
+</div>
+
 
