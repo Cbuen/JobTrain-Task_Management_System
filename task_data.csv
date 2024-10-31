@@ -1,72 +1,71 @@
-Category,Task
-Social,Host a BBQ
-Social,Attend a family reunion
-Social,Plan a beach day with friends
-Social,Spend time with homies
-Social,Join a wine club
-Social,Organize a board game night
-Social,Attend a book signing event
-Social,Plan a road trip with friends
-Social,Host a potluck dinner
-Social,Out for dinner
-Social,On a date with my girlfriend
-Social,Out with friends
-Social, Visit the mall
-Personal Development,Write a blog post for the company website
-Personal Development,Take a photography class
-Personal Development,Learn graphic design
-Personal Development,Practice public speaking
-Personal Development,Read a self-help book
-Personal Development,Watch a TED Talk
-Personal Development,Join a mastermind group
-Personal Development,Start a personal blog
-Personal Development,Work
-Personal Development,Finish homework
-Personal Development,Complete school assignments
-Health,Join a mental health support group
-Health,Attend a nutritionist appointment
-Health,Schedule a dental check-up
-Health,Attend a yoga class
-Health,Get a flu shot
-Health,Visit a chiropractor
-Health,Attend a therapy session
-Health,Get a health screening
-Fitness,For a run
-Fitness,Attend a spin class
-Fitness,Do a home workout
-Fitness,Swimming
-Fitness,Take a dance class
-Fitness,Join a martial arts class
-Fitness,Hiking
-Fitness,Do a yoga session
-Errands,Buy cleaning supplies
-Errands,Get a haircut
-Errands,Pick up kids from daycare
-Errands,Drop off donations
-Errands,Get passport photos
-Errands,Buy school supplies
-Errands,Pick up groceries curbside
-Errands,Return an online purchase
-Bills,Cancel gym membership
-Bills,Cancel Netflix subscription
-Bills,Cancel magazine subscription
-Bills,Cancel streaming service subscription
-Bills,Cancel insurance policy
-Bills,Cancel phone service
-Bills,Cancel internet service
-Bills,Pay credit card bill
-Shopping,Shop for clothes
-Shopping,Shop for electronics
-Shopping,Shop at the farmers market
-Shopping,Shop for groceries
-Shopping,Buy birthday gifts
-Shopping,Shop for home decor
-Shopping,Shop for shoes
-Shopping,Shop at the bookstore
-Shopping,Buy sports equipment
-Shopping,Shop for cosmetics
-Shopping,Buy office supplies
-Shopping,Shop for kitchenware
-Shopping,Shop for garden supplies
-Shopping,Shop at thrift stores
-Shopping,Buy pet supplies
+Task,Category
+go to gym,Fitness
+morning yoga session,Fitness
+evening run,Fitness
+walking the dog,Fitness
+attend fitness class,Fitness
+swimming session,Fitness
+cycling,Fitness
+hiking,Fitness
+weight lifting,Fitness
+aerobics class,Fitness
+pay electricity bill,Bills
+pay gym membership,Bills
+pay rent,Bills
+pay credit card bill,Bills
+pay water bill,Bills
+pay internet bill,Bills
+pay phone bill,Bills
+pay insurance premium,Bills
+pay mortgage,Bills
+pay loan installment,Bills
+annual health checkup,Health
+dentist appointment,Health
+doctor appointment,Health
+meditate for 20 minutes,Health
+buy vitamins,Health
+yoga session,Health
+therapy session,Health
+buy prescription medicine,Health
+health insurance renewal,Health
+get flu shot,Health
+team meeting at 2 pm,Work
+submit project report,Work
+attend conference call,Work
+finish coding assignment,Work
+weekly team sync,Work
+prepare presentation,Work
+client meeting,Work
+review team performance,Work
+update project plan,Work
+send weekly updates,Work
+buy groceries,Errands
+pick up dry cleaning,Errands
+post office visit,Errands
+car maintenance,Errands
+bank visit,Errands
+buy pet food,Errands
+drop off recycling,Errands
+pick up kids from school,Errands
+buy birthday gift,Errands
+return library books,Errands
+read a book,Personal Development
+take an online course,Personal Development
+practice a new language,Personal Development
+attend a workshop,Personal Development
+write in journal,Personal Development
+learn to play an instrument,Personal Development
+practice coding,Personal Development
+meditation session,Personal Development
+watch educational videos,Personal Development
+work on a hobby,Personal Development
+call a friend,Social
+attend a social event,Social
+go out for dinner,Social
+visit family,Social
+plan a party,Social
+join a club,Social
+volunteer at a local charity,Social
+attend a concert,Social
+go to a movie,Social
+host a game night,Social

@@ -1,7 +1,6 @@
 import pandas as pd
-import random
 
-# Define the categories and example tasks
+# Define task categories and examples
 categories = {
     'Fitness': [
         'go to gym', 'morning yoga session', 'evening run', 'walking the dog', 'attend fitness class',
@@ -37,12 +36,23 @@ categories = {
 data = []
 for category, tasks in categories.items():
     for task in tasks:
-        data.append({'task': task, 'category': category})
+        data.append({'Task': task.lower(), 'Category': category})  # Convert tasks to lowercase here
 
 # Create a DataFrame
 df = pd.DataFrame(data)
 
+# Validate column names and check for missing values
+if list(df.columns) == ['Task', 'Category']:
+    print("Column names are correct.")
+else:
+    print("Column names are incorrect:", df.columns)
+
+# Check for missing values
+if df.isnull().sum().sum() == 0:
+    print("No missing values found.")
+else:
+    print("Missing values detected. Details:\n", df.isnull().sum())
+
 # Save the DataFrame to a CSV file
 df.to_csv('task_data.csv', index=False)
-
-print("Initial data saved to 'task_data.csv'")
+print("Data saved to 'task_data.csv'")
