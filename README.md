@@ -46,9 +46,8 @@ Upon launching the application, a main window will appear, providing access to v
 - Click the "Complete Task" button to mark a task as completed.
 - Click the "Exit" button to close the application.
 
-Please note that the task management system currently does not persist tasks beyond the current runtime. Tasks will be lost once the application is closed.
 
-## Contributing
+## Images
 
-Contributions to the task management system are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
+![Task-manager-1](https://github.com/user-attachments/assets/52287520-372d-4262-80a9-ddd27c89a7ba)
 
