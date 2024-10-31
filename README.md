@@ -60,13 +60,13 @@ Upon launching the application, a main window will appear, providing access to v
 - The user_input_processing.py file contains the code for training the model and making predictions.
 - The model uses TF-IDF vectorization and a Support Vector Machine (SVM) classifier for categorization.
 - Grid search cross-validation is used to find optimal parameters for the model.
-- 
+
 **Users can customize categorization by modifying the task_data.csv file. To add or remove data**
  1. Open the task_data.csv file.
  2. Add new rows with tasks and their corresponding categories or remove existing rows.
  3. Save the file.
  4. Run the build_csv.py script to regenerate the CSV file used by the model:
-    
+ 
 ```bash
 python build_csv.py
 ```
