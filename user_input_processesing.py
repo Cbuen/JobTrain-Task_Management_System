@@ -40,14 +40,11 @@ parameters = {
 grid_search = GridSearchCV(pipeline, parameters, cv=5, n_jobs=-1, verbose=1)
 grid_search.fit(X_train, y_train)
 
-# Print the best parameters
-# print("Best parameters:", grid_search.best_params_)   
-
 # Evaluate the model
-# y_pred = grid_search.predict(X_test)
-# print("Accuracy:", accuracy_score(y_test, y_pred))
-# print("\nClassification Report:")
-# print(classification_report(y_test, y_pred, target_names=le.classes_))
+y_pred = grid_search.predict(X_test)
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("\nClassification Report:")
+print(classification_report(y_test, y_pred, target_names=le.classes_))
 
 # Function to predict categories
 def predict_category(tasks):
